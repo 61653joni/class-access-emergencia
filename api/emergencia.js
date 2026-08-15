@@ -14,7 +14,7 @@ export default async function handler(req, res) {
 
   const mensaje = `Solicitan apoyo / modo emergencia en aula ${aula}`;
 
-  const { error } = await supabase.from('mensajes').insert({ mensaje });
+  const { error } = await supabase.from('mensaje').insert({ mensaje });
 
   if (error) {
     return res.status(500).json({ ok: false, error: error.message });
